@@ -1,0 +1,12 @@
+﻿@model IEnumerable<MyVeggieStore.Models.ViewModels.Pages.Store.CategoryVM>
+
+<h3>Categories</h3>
+
+<ul>
+
+    @foreach (var item in Model)
+    {
+        <li><a href="/store/category/@item.Slug.ToLower()">@item.Name</a></li>
+    }
+
+</ul>
