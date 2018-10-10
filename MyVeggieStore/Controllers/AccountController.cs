@@ -11,7 +11,7 @@ namespace MyVeggieStore.Controllers
 {
     public class AccountController : Controller
     {
-        // GET: Account
+        // GET: Account index
         public ActionResult Index()
         {
             return Redirect("~/Account/Login");
