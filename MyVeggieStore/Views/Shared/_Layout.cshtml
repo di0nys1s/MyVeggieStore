@@ -1,6 +1,66 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
+
+    <style>
+
+        body {
+            background-image: url('/Content/img/ok.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .navbar-header {
+            background-color: #296404;
+        }
+
+        h1 {
+            -webkit-text-stroke: 1px black;
+            color: white;
+            text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+
+        p:first-letter {
+            text-transform: uppercase;
+        }
+
+        p, h3, td, th, tr {
+            color: #424242;
+            font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+            letter-spacing: 0.1em;
+            text-align: left;
+            margin: 40px auto;
+            text-transform: lowercase;
+            line-height: 145%;
+            font-size: 14pt;
+            font-variant: small-caps;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 40px auto;
+            text-transform: lowercase;
+            line-height: 145%;
+            font-size: 14pt;
+            font-variant: small-caps;
+            color: #424242;
+            font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+            letter-spacing: 0.1em;
+        }
+
+        a {
+            font-style: normal;
+            font-variant: small-caps;
+            text-decoration: none;
+            color: #afafaf;
+            font-size: 14px;
+            text-align: left;
+        }
+    </style>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - MyVeggieStore</title>
@@ -27,10 +87,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+
                 </button>
                 <a href="/" class="navbar-brand">MyVeggieStore</a>
             </div>
             <div class="navbar-collapse collapse">
+
                 <ul class="nav navbar-nav">
                     @Html.Action("PagesMenuPartial", "Pages");
                     @if (Request.IsAuthenticated)
@@ -68,8 +130,8 @@
 
                     }
 
-                        <li><a href="/tblLocations/Index">Where to Find Us</a></li>
-                    
+                    <li><a href="/tblLocations/Index">Where to Find Us</a></li>
+
 
                 </ul>
 
@@ -88,9 +150,10 @@
 
             @if (ViewBag.Sidebar == "Yes")
             {
-                <div class="col-xs-12 col-md-8">
-                    @RenderBody()
-                </div>
+            <div class="col-xs-12 col-md-8">
+
+                @RenderBody()
+            </div>
                 <div class="col-xs-12 col-md-2">
                     @Html.Action("SidebarPartial", "Pages")
                 </div>
@@ -98,18 +161,21 @@
             }
             else
             {
+
                 <div class="col-xs-12 col-md-10">
+
                     @RenderBody()
+
                 </div>
+
             }
 
         </div>
 
-
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - MyVeggieStore</p>
-        </footer>
+        @* <footer>
+                <p>&copy; @DateTime.Now.Year - MyVeggieStore</p>
+            </footer>
+        *@
     </div>
 
     @Scripts.Render("~/bundles/scripts")

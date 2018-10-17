@@ -29,7 +29,7 @@ for (i = 0; i < locations.length; i++) {
         "type": "Feature",
         "properties": {
             "description": locations[i].description,
-            "icon": "circle-15"
+            "icon": "grocery-15"
         },
         "geometry": {
             "type": "Point",
@@ -96,4 +96,4 @@ map.on('mouseenter', 'places', function () {
 map.on('mouseleave', 'places', function () {
     map.getCanvas().style.cursor = '';
     });
-});
+});

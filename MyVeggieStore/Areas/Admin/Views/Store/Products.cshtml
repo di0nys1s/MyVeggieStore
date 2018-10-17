@@ -7,6 +7,27 @@
 @using PagedList.Mvc;
 @using PagedList;
 
+<style>
+    .delete {
+        color: white;
+        font-weight: bold;
+    }
+
+    .edit {
+        color: white;
+        font-weight: bold;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    .add {
+        font-size: x-large;
+    }
+
+</style>
+
 <h2>Products</h2>
 
 <select id="SelectCategory" name="SelectCategory">
@@ -25,8 +46,8 @@
 </select>
 <br /> <br />
 
-<p>
-    @Html.ActionLink("Add New Product", "AddProduct")
+<p class="text-left">
+    @Html.ActionLink("Add New Product", "AddProduct", new { @class = "add" })
 </p>
 <table class="table">
     <tr>
@@ -57,12 +78,12 @@
             <td>
                 $@product.Price
             </td>
-            <td>
+            <td class="actions">
                 <a href="/admin/store/EditProduct/@product.Id" />
                 <img src="/Images/Uploads/Products/@product.Id/Thumbs/@product.ImageName" />
             </td>
             <td>
-                @Html.ActionLink("Edit", "EditProduct", new { id = product.Id }) |
+                @Html.ActionLink("Edit", "EditProduct", new { id = product.Id }, new { @class = "edit" }) |
                 @Html.ActionLink("Delete", "DeleteProduct", new { id = product.Id }, new { @class = "delete" })
             </td>
         </tr>

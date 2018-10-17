@@ -4,13 +4,19 @@
     ViewBag.Title = "Pages";
 }
 
-<p>
+<style>
+    td {
+        text-align:left;
+    }
+</style>
+
+<p class="text-left">
     @Html.ActionLink("Add New Page", "AddPage")
 </p>
 
 @if (!Model.Any())
 {
-    <h1 class="text-center">There are no pages. Please add a new page.</h1>
+    <h1 class="text-left">There are no pages. Please add a new page.</h1>
 }
 else
 {
@@ -30,8 +36,8 @@ else
 
         @foreach (var item in Model)
         {
-            <tr id="id_@item.Id" class="@item.Slug">
-                <td>
+            <tr id="id_@item.Id" class="@item.Slug" style="text-align:left">
+                <td style="text-align:left">
                     @Html.DisplayFor(modelItem => item.Title)
                 </td>
                 <td>

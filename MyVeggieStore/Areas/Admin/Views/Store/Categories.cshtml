@@ -4,11 +4,18 @@
     ViewBag.Title = "Categories";
 }
 
+<style>
+    .delete {
+        color:white;
+        font-weight: bold;
+    }
+</style>
+
 <h2>Categories</h2>
 
 <div class="new-cat">
     <input type="text" id="newcatname" />
-    <p>
+    <p class="text-left">
         <a href="#" id="newcata">Add a new category</a>
         <span class="ajax-text">
             <img src="~/Content/img/ajax-loader.gif"/>
@@ -122,7 +129,7 @@ else
             });
 
                         /*
-            * Rorder categories
+            * Reorder categories
             */
 
             $("table#pages tbody").sortable({
@@ -148,14 +155,14 @@ else
              */
 
             $("body").on("click", "a.delete", function () {
-                    if (!confirm("Are you sure want to delete the page?")) return false;
+                    if (!confirm("Are you sure want to delete the category?")) return false;
                 
             });
 
             ////////////////////////////////////////////////////////////////////////
 
                         /*
-             * Renama categories
+             * Rename categories
              */
 
             var originalTextBoxValue;

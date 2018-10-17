@@ -1,6 +1,54 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+
+    <style>
+
+        body {
+            background-image: url('/Content/img/ok2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .navbar-header {
+            background-color: rebeccapurple;
+        }
+
+        h1 {
+            -webkit-text-stroke: 1px black;
+            color: white;
+            text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+
+        p:first-letter {
+            text-transform: uppercase;
+        }
+
+        p, h3, h2, td, th, ul {
+            color: #424242;
+            font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+            letter-spacing: 0.1em;
+            text-align: center;
+            margin: 40px auto;
+            text-transform: lowercase;
+            line-height: 145%;
+            font-size: 14pt;
+            font-variant: small-caps;
+        }
+
+        a {
+            font-style: normal;
+            font-variant: small-caps;
+            text-decoration: none;
+            color: #afafaf;
+            font-size: 14px;
+            text-align: left;
+        }
+
+    </style>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Admin Area</title>
@@ -25,17 +73,16 @@
                     <li><a href="/admin/store/categories">Category</a></li>
                     <li><a href="/admin/store/products">Product</a></li>
                     <li><a href="/tblLocations/Create">Add New Store</a></li>
-                    <li class="navbar-right"><a href="/account/logout">Logout</a></li>
-                </ul>
-                <ul class="navbar-right">
-                    <li><a href="/" class="navbar-brand" target="">MyVeggieStore</a></li>
+                    <li><a href="/" target="">MyVeggieStore</a></li>
+                    <li><a href="/account/logout">Logout</a></li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+
+
     </div>
     @Scripts.Render("~/bundles/scripts")
     @RenderSection("scripts", required: false)
