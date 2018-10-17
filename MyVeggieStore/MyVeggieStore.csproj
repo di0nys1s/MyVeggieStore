@@ -181,7 +181,45 @@
     <Compile Include="Models\Data\UserDTO.cs" />
     <Compile Include="Models\Data\UserRoleDTO.cs" />
     <Compile Include="Models\LocationModels.cs" />
-    <Compile Include="Models\tblLocation.cs" />
+    <Compile Include="Models\MFVModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MFVModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MFVModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MFVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MFVModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MFVModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblCategory.cs">
+      <DependentUpon>MFVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblLocation.cs">
+      <DependentUpon>MFVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblPage.cs">
+      <DependentUpon>MFVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblProduct.cs">
+      <DependentUpon>MFVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblRole.cs">
+      <DependentUpon>MFVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblSidebar.cs">
+      <DependentUpon>MFVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblUser.cs">
+      <DependentUpon>MFVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblUserRole.cs">
+      <DependentUpon>MFVModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ViewModels\Account\LoginUserVM.cs" />
     <Compile Include="Models\ViewModels\Account\UserNavPartialVM.cs" />
     <Compile Include="Models\ViewModels\Account\UserProfileVM.cs" />
@@ -486,6 +524,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\MFVModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MFVModel.edmx</DependentUpon>
+      <LastGenOutput>MFVModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MFVModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MFVModel.edmx</DependentUpon>
+      <LastGenOutput>MFVModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -529,6 +577,13 @@
     <Content Include="Areas\Admin\Views\Store\AddProduct.cshtml" />
     <Content Include="Areas\Admin\Views\Store\Products.cshtml" />
     <Content Include="Areas\Admin\Views\Store\EditProduct.cshtml" />
+    <EntityDeploy Include="Models\MFVModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MFVModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MFVModel.edmx.diagram">
+      <DependentUpon>MFVModel.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\dionys1sVM - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
@@ -940,6 +995,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

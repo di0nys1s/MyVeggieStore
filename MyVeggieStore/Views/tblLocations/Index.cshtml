@@ -159,8 +159,50 @@ else
 
     </table>
 
+
+
+
+
 *@
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/mapbox")
 }
+
+
+
+    @*<script>
+        var data = [];
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZGkwbnlzMXMiLCJhIjoiY2puMDFzNG15MWpzdjN2bmtsdmZhNzVwOSJ9.iC9G3kHfzzq04qIN08HrKg';
+        // eslint-disable-next-line no-undef
+
+        var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+        var map = new mapboxgl.Map({
+            container: 'maps',
+            style: 'mapbox://styles/mapbox/streets-v10',
+            center: [145.031588, -37.889921],
+            zoom: 11
+        });
+
+        map.addControl(new mapboxgl.NavigationControl());
+
+        map.addControl(new MapboxDirections({
+            accessToken: mapboxgl.accessToken
+        }), 'top-left');
+
+        map.addControl(new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            trackUserLocation: true
+        }));
+
+        map.on('mouseenter', 'places', function () {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+        // Change it back to a pointer when it leaves.
+        map.on('mouseleave', 'places', function () {
+            map.getCanvas().style.cursor = '';
+        });
+    </script>*@

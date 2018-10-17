@@ -12,12 +12,15 @@ namespace MyVeggieStore.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tblLocation
+    public partial class tblProduct
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Slug { get; set; }
         public string Description { get; set; }
-        public Nullable<decimal> Latitude { get; set; }
-        public Nullable<decimal> Longitude { get; set; }
+        public Nullable<decimal> Price { get; set; }
+        public string CategoryName { get; set; }
+        public Nullable<int> CategoryId { get; set; }
+        public string ImageName { get; set; }
     }
 }
