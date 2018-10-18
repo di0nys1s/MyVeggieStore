@@ -87,5 +87,49 @@ namespace MyVeggieStore.Controllers
             // return partial view with the model
             return PartialView(model);
         }
+
+        // GET: /Pages/EditSidebar
+        [HttpGet]
+        public ActionResult EditSidebar()
+        {
+            // Declare model
+            SidebarVM model;
+
+            using (Db db = new Db())
+            {
+                // Get the DTO
+                SidebarDTO dto = db.Sidebar.Find(1);
+
+                // Init the model
+                model = new SidebarVM(dto);
+            }
+
+            // Return view with the model
+            return View(model);
+        }
+
+        // POST: /Pages/EditSidebar
+        [HttpPost]
+        public ActionResult EditSidebar(SidebarVM model)
+        {
+            using (Db db = new Db())
+            {
+                // Get the DTO
+                SidebarDTO dto = db.Sidebar.Find(1);
+
+                // DTO the body
+                dto.Body = model.Body;
+
+                // Save
+                db.SaveChanges();
+            }
+
+            // Set TempData message
+            TempData["SM"] = "Cool! You have successfully edited the sidebar!";
+
+
+            // Redirect
+            return RedirectToAction("EditSidebar");
+        }
     }
 }

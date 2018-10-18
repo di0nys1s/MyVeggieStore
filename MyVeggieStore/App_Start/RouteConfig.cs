@@ -26,6 +26,9 @@ namespace MyVeggieStore
             routes.MapRoute("SidebarPartial", "Pages/SidebarPartial", new { controller = "Pages", action = "SidebarPartial" },
                  new[] { "MyVeggieStore.Controllers" });
 
+            routes.MapRoute("EditSidebar", "Pages/EditSidebar", new { controller = "Pages", action = "EditSidebar" },
+                new[] { "MyVeggieStore.Controllers" });
+
             routes.MapRoute("Pages", "{page}", new { controller = "Pages", action = "Index" },
                 new[] { "MyVeggieStore.Controllers" });
 

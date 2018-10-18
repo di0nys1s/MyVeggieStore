@@ -33,5 +33,7 @@ namespace MyVeggieStore.Models
         public virtual DbSet<tblSidebar> tblSidebars { get; set; }
         public virtual DbSet<tblUserRole> tblUserRoles { get; set; }
         public virtual DbSet<tblUser> tblUsers { get; set; }
+
+        public System.Data.Entity.DbSet<MyVeggieStore.Models.ViewModels.Pages.SidebarVM> SidebarVMs { get; set; }
     }
 }

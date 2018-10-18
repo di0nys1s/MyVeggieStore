@@ -974,6 +974,7 @@
     <Content Include="Views\tblLocations\Details.cshtml" />
     <Content Include="Views\tblLocations\Edit.cshtml" />
     <Content Include="Views\tblLocations\Index.cshtml" />
+    <Content Include="Views\Pages\EditSidebar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
