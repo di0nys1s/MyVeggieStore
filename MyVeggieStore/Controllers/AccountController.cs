@@ -1,5 +1,6 @@
 ﻿using MyVeggieStore.Models.Data;
 using MyVeggieStore.Models.ViewModels.Account;
+using reCAPTCHA.MVC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,10 @@ namespace MyVeggieStore.Controllers
 
         // POST /Account/Login
         [HttpPost]
+        [CaptchaValidator(
+        PrivateKey = "6LeX1nUUAAAAAD49EXr3mGsbEsk7OWFi9E2Fg4wp",
+        ErrorMessage = "Invalid input captcha.",
+        RequiredMessage = "The captcha field is required.")]
         public ActionResult Login(LoginUserVM model)
         {
             // check modelstate
@@ -78,6 +83,10 @@ namespace MyVeggieStore.Controllers
         // POST: /account/register
         [ActionName("Register")]
         [HttpPost]
+        [CaptchaValidator(
+        PrivateKey = "6LeX1nUUAAAAAD49EXr3mGsbEsk7OWFi9E2Fg4wp",
+        ErrorMessage = "Invalid input captcha.",
+        RequiredMessage = "The captcha field is required.")]
         public ActionResult CreateAccount(UserVM model)
         {
             // check model state
